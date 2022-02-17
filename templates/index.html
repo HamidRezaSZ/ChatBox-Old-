@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>ChatBox</title>
+    <link rel="icon" href="{% static 'pages/images/Rafiqul-Hassan-Blogger-Chat-3.ico' %}"/>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link type="text/css" rel="stylesheet" href="{% static 'pages/styles/styles.css' %}"/>
+</head>
+
+<body id="body-index">
+<div id="buttons-index">
+    <h1 style="text-align: center">Welcome to ChatBox</h1>
+    <br>
+    <button class="button-64" onClick="self.location='signup/'" role="button"><span class="text">Sign Up</span></button>
+    <button class="button-64" onClick="self.location='login/'" role="button"><span class="text">Log In</span></button>
+</div>
+
+<script src="{% static 'pages/scripts/index.js' %}"></script>
+</body>
+</html>

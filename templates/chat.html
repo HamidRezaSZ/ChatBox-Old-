@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>ChatBox</title>
+    <link rel="icon" href="{% static 'pages/images/Rafiqul-Hassan-Blogger-Chat-3.ico' %}"/>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link type="text/css" rel="stylesheet" href="{% static 'pages/styles/styles.css' %}"/>
+</head>
+
+<body>
+<div id="chat-web">
+    <aside>
+        <header>
+            <img id="chatBox-Ico" src="{% static 'pages/images/Rafiqul-Hassan-Blogger-Chat-3.ico' %}" alt="ChatBox"/>
+            <h3>ChatBox</h3>
+        </header>
+        <div id="contacts">
+            <input id="search-input" type="search" placeholder="Search"/>
+            <div id="contact">
+                {% for user in users %}
+                    <div class="contact-name"
+                         onclick="changer('{{ user.user.username }}')">{{ user.user.username }}</div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </aside>
+    <section id="section">
+        <header>
+            <h2 id="header-contact">Contact Name</h2>
+        </header>
+        <div id="messages_page" style="background-image: url('{% static 'pages/images/Desktop.png' %}')">
+            {% for message,time in messages.items %}
+                <div class="message-blue">
+                    <div class="message-content">{{ message }}</div>
+                    <div class="message-time-left">{{ time }}</div>
+                </div>
+            {% endfor %}
+            {{ messages.clear }}
+        </div>
+        <article>
+            <div id="message-div">
+                <textarea placeholder="Message" id="message" rows="2"></textarea>
+                <button id="send-btn">Send</button>
+            </div>
+        </article>
+    </section>
+</div>
+<script src="{% static 'pages/scripts/index.js' %}"></script>
+</body>
+</html>

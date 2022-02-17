@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>ChatBox</title>
+    <link rel="icon" href="{% static 'pages/images/Rafiqul-Hassan-Blogger-Chat-3.ico' %}"/>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link type="text/css" rel="stylesheet" href="{% static 'pages/styles/styles.css' %}"/>
+</head>
+
+<body>
+<h2>
+    Log In
+</h2>
+<form method="POST" class="post-form">{% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="save btn btn-default">Log In</button>
+</form>
+</body>
+</html>
